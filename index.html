@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krazy Glue × Nail Glue — Category Opportunity</title>
+<title>Protected</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -102,17 +102,17 @@ tr.kg td.brand{color:var(--lime)}
 footer{padding:50px 0 70px;border-top:1px solid rgba(197,223,201,.16)}
 footer p{font-size:13.5px;color:var(--sec-light);max-width:95ch}
 .mono{font-variant-numeric:tabular-nums}
-/* PASSWORD GATE */
-#gate{position:fixed;inset:0;z-index:9999;background:var(--green);display:flex;align-items:center;justify-content:center;padding:24px}
+/* PASSWORD GATE — intentionally neutral / unbranded */
+#gate{position:fixed;inset:0;z-index:9999;background:#0f1216;display:flex;align-items:center;justify-content:center;padding:24px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
 #gate.hidden{display:none}
-.gatecard{max-width:380px;width:100%;text-align:center}
-.gatecard .gl{color:var(--lime);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
-.gatecard h2{color:var(--cream);font-size:26px;margin:14px 0 6px}
-.gatecard p{color:var(--sec-dark);font-size:15px;margin:0 auto 22px;max-width:30ch}
-#gpw{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(197,223,201,.35);background:rgba(197,223,201,.07);color:var(--cream);font-family:inherit;font-size:16px;outline:none}
-#gpw:focus{border-color:var(--lime)}
-#gbtn{margin-top:12px;width:100%;padding:14px;border:none;border-radius:12px;background:var(--lime);color:var(--green);font-family:inherit;font-weight:700;font-size:16px;cursor:pointer}
-#gerr{color:var(--red);font-size:14px;margin-top:12px;min-height:18px}
+.gatecard{max-width:360px;width:100%;text-align:center}
+.gatecard .glock{font-size:30px;margin-bottom:14px;filter:grayscale(1) opacity(.85)}
+.gatecard h2{color:#f3f4f6;font-size:24px;font-weight:600;margin:0 0 6px}
+.gatecard p{color:#9aa3ad;font-size:15px;margin:0 auto 22px;max-width:30ch}
+#gpw{width:100%;padding:14px 16px;border-radius:10px;border:1px solid #2a2f37;background:#171b21;color:#f3f4f6;font-family:inherit;font-size:16px;outline:none}
+#gpw:focus{border-color:#5b6675}
+#gbtn{margin-top:12px;width:100%;padding:14px;border:none;border-radius:10px;background:#e7e9ec;color:#0f1216;font-family:inherit;font-weight:600;font-size:16px;cursor:pointer}
+#gerr{color:#f87171;font-size:14px;margin-top:12px;min-height:18px}
 body.locked{overflow:hidden}
 @media(max-width:780px){
   .stats{grid-template-columns:repeat(2,1fr)}
@@ -125,11 +125,11 @@ body.locked{overflow:hidden}
 
 <div id="gate">
   <div class="gatecard">
-    <div class="gl">Krazy Glue</div>
-    <h2>Protected brief</h2>
-    <p>Enter the password to view the nail-glue opportunity brief.</p>
+    <div class="glock" aria-hidden="true">&#128274;</div>
+    <h2>Private</h2>
+    <p>Enter the password to continue.</p>
     <input id="gpw" type="password" placeholder="Password" autocomplete="off" autofocus>
-    <button id="gbtn">Unlock</button>
+    <button id="gbtn">Continue</button>
     <div id="gerr"></div>
   </div>
 </div>
