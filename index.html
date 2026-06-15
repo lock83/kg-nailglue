@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krazy Glue × Nail Glue — Category Opportunity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1D4227; --lime:#B7FF5B; --cream:#EFF6F1;
+  --sec-dark:#C5DFC9; --sec-light:#3d6347; --sec-light2:#5a7d62;
+  --red:#E63946; --card:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--green);color:var(--cream);
+  -webkit-font-smoothing:antialiased;line-height:1.45}
+.grid-bg{background-image:
+   linear-gradient(rgba(183,255,91,.06) 1px,transparent 1px),
+   linear-gradient(90deg,rgba(183,255,91,.06) 1px,transparent 1px);
+  background-size:44px 44px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+section{padding:72px 0;border-top:1px solid rgba(197,223,201,.16)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+h1{font-size:clamp(40px,7vw,82px);font-weight:700;line-height:.98;letter-spacing:-.02em;margin:18px 0}
+h2{font-size:clamp(28px,4vw,46px);font-weight:700;line-height:1.02;letter-spacing:-.015em;margin-bottom:10px}
+h3{font-size:20px;font-weight:600;margin-bottom:8px}
+p{color:var(--sec-dark);font-size:17px;max-width:62ch}
+.lead{font-size:clamp(19px,2.4vw,24px);color:var(--cream);max-width:60ch}
+.lime{color:var(--lime)} .red{color:var(--red)} .white{color:var(--cream)}
+.kicker{color:var(--sec-light);font-weight:600}
+
+/* HERO */
+header.hero{padding:54px 0 24px}
+.logo{height:46px;width:auto;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{font-size:13px;font-weight:500;color:var(--green);background:var(--lime);
+  padding:7px 14px;border-radius:100px}
+.chip.ghost{background:transparent;color:var(--sec-dark);border:1px solid rgba(197,223,201,.32)}
+
+/* STAT GRID */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+.stat{background:rgba(197,223,201,.07);border:1px solid rgba(197,223,201,.16);
+  border-radius:16px;padding:24px}
+.stat .num{font-size:clamp(30px,3.6vw,46px);font-weight:700;color:var(--lime);letter-spacing:-.02em;line-height:1}
+.stat .lab{margin-top:10px;font-size:14px;color:var(--sec-dark)}
+
+/* CARDS / VERDICT */
+.verdict{background:var(--lime);color:var(--green);border-radius:22px;padding:44px 40px;margin-top:8px}
+.verdict h2{color:var(--green)}
+.verdict p{color:#244b2e;font-size:19px;max-width:64ch}
+.verdict .tag{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+/* SOV + sentiment bars */
+.barrow{display:flex;align-items:center;gap:16px;margin:14px 0}
+.barrow .name{width:170px;flex:none;font-weight:600;color:var(--cream);font-size:15px}
+.track{flex:1;background:rgba(197,223,201,.12);border-radius:8px;height:30px;position:relative;overflow:hidden}
+.fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-weight:600;font-size:14px;color:var(--green)}
+.fill.lime{background:var(--lime)} .fill.mut{background:var(--sec-light);color:var(--cream)}
+.split{display:flex;height:30px;border-radius:8px;overflow:hidden;flex:1}
+.split .pos{background:var(--lime)} .split .neg{background:var(--red)}
+.split span{display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:600;color:var(--green)}
+.split .neg span{color:#fff}
+.legend{font-size:13px;color:var(--sec-light);display:flex;gap:18px;margin-top:8px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+
+/* two-col */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.panel{background:rgba(197,223,201,.07);border:1px solid rgba(197,223,201,.16);border-radius:16px;padding:26px}
+.panel h3{color:var(--lime)}
+.panel ul{list-style:none;margin-top:6px}
+.panel li{color:var(--sec-dark);font-size:15.5px;padding:7px 0 7px 20px;position:relative}
+.panel li:before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:2px;background:var(--lime)}
+
+/* risks */
+.risks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:26px}
+.risk{background:rgba(230,57,70,.08);border:1px solid rgba(230,57,70,.35);border-radius:16px;padding:24px}
+.risk .n{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase}
+.risk h3{color:var(--cream);margin-top:8px}
+.risk p{font-size:15px;color:var(--sec-dark)}
+
+/* table */
+.tablewrap{margin-top:26px;overflow-x:auto;border:1px solid rgba(197,223,201,.16);border-radius:16px}
+table{width:100%;border-collapse:collapse;min-width:680px}
+th,td{text-align:left;padding:13px 16px;font-size:14.5px}
+thead th{background:rgba(197,223,201,.1);color:var(--lime);font-weight:600;letter-spacing:.02em;
+  position:sticky;top:0}
+tbody tr{border-top:1px solid rgba(197,223,201,.12)}
+tbody td{color:var(--sec-dark)}
+tbody td.brand{color:var(--cream);font-weight:600}
+tr.kg td{background:rgba(183,255,91,.12)}
+tr.kg td.brand{color:var(--lime)}
+
+/* reco */
+.steps{counter-reset:s;margin-top:26px;display:grid;gap:14px}
+.step{display:flex;gap:18px;align-items:flex-start;background:rgba(197,223,201,.07);
+  border:1px solid rgba(197,223,201,.16);border-radius:14px;padding:20px 22px}
+.step:before{counter-increment:s;content:counter(s);flex:none;width:38px;height:38px;border-radius:10px;
+  background:var(--lime);color:var(--green);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:18px}
+.step h3{color:var(--cream)} .step p{font-size:15px;margin-top:2px}
+
+.quote{border-left:3px solid var(--lime);padding:6px 0 6px 18px;margin:14px 0;color:var(--cream);
+  font-size:17px;max-width:60ch}
+.quote span{display:block;color:var(--sec-light);font-size:13px;margin-top:4px}
+
+footer{padding:50px 0 70px;border-top:1px solid rgba(197,223,201,.16)}
+footer p{font-size:13.5px;color:var(--sec-light);max-width:90ch}
+.mono{font-variant-numeric:tabular-nums}
+@media(max-width:780px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cols,.risks{grid-template-columns:1fr}
+  .barrow .name{width:120px}
+}
+</style>
+</head>
+<body class="grid-bg">
+
+<div class="wrap">
+<header class="hero">
+  <svg class="logo" viewBox="0 0 413 200" xmlns="http://www.w3.org/2000/svg" aria-label="Krazy Glue">
+    <path d="M252.894 180.17C252.978 179.878 252.894 179.67 252.643 179.67H241.384C241.132 179.67 240.84 179.878 240.756 180.17L239.123 184.84C239.039 185.132 239.123 185.339 239.375 185.339H243.77C243.978 185.339 243.978 185.423 243.978 185.631C243.434 187.258 242.89 188.342 242.346 189.217C240.756 191.594 238.663 192.929 235.817 192.929C232.971 192.929 231.422 191.051 231.967 188.049C232.386 185.547 235.565 176.412 237.114 174.035C238.704 171.534 241.008 169.991 243.77 169.991C246.532 169.991 247.663 171.242 248.123 173.577C248.164 173.827 248.332 173.995 248.708 173.827L254.359 171.658C254.652 171.491 254.863 171.2 254.779 170.949C254.57 166.821 251.43 163.651 245.863 163.651C240.296 163.651 234.813 166.028 231.171 171.575C228.785 175.244 225.311 185.629 224.767 188.715C223.554 195.681 227.32 199.267 233.724 199.267C240.128 199.267 244.522 196.931 248.207 191.384C249.42 189.506 250.801 186.379 251.933 182.917L252.937 180.122L252.897 180.163L252.894 180.17Z" fill="#B7FF5B"/>
+    <path d="M259.297 192.432C259.089 192.432 259.005 192.348 259.089 192.14L268.674 164.78C268.758 164.489 268.674 164.281 268.381 164.281H262.354C262.061 164.281 261.81 164.489 261.726 164.78L249.964 198.27C249.88 198.562 250.005 198.77 250.34 198.77H270.975C271.227 198.77 271.479 198.562 271.56 198.27L273.445 192.931C273.529 192.64 273.445 192.432 273.152 192.432H259.297Z" fill="#B7FF5B"/>
+    <path d="M308.812 164.238H302.826C302.533 164.238 302.282 164.446 302.198 164.737L294.581 186.3C292.78 191.388 290.311 192.931 287.048 192.931C283.785 192.931 282.193 190.595 283.699 186.3L291.232 164.737C291.315 164.446 291.191 164.238 290.855 164.238H284.828C284.576 164.238 284.325 164.446 284.243 164.737L276.792 185.925C273.778 194.515 277.46 199.312 285.288 199.312C293.116 199.312 298.179 196.018 301.529 186.424L309.146 164.737C309.23 164.446 309.105 164.238 308.769 164.238H308.812Z" fill="#B7FF5B"/>
+    <path d="M328.192 178.294H316.514C316.305 178.294 316.221 178.211 316.305 178.003L318.815 170.745C318.899 170.538 319.024 170.454 319.235 170.454H333.298C333.55 170.454 333.842 170.246 333.926 169.955L335.727 164.783C335.811 164.491 335.727 164.283 335.434 164.283H314.59C314.298 164.283 314.046 164.491 313.962 164.783L302.2 198.273C302.116 198.564 302.241 198.772 302.577 198.772H323.337C323.629 198.772 323.881 198.564 323.965 198.273L325.849 193.101C325.933 192.809 325.849 192.601 325.557 192.601H311.493C311.284 192.601 311.2 192.518 311.284 192.31L313.921 184.761C314.005 184.553 314.13 184.469 314.341 184.469H326.019C326.312 184.469 326.604 184.262 326.688 183.97L328.488 178.882C328.572 178.59 328.488 178.382 328.196 178.382V178.299L328.192 178.294Z" fill="#B7FF5B"/>
+    <path d="M411.442 63.7696C411.442 63.7696 383.233 63.7696 381.893 63.7696C380.553 63.7696 379.759 64.5198 379.383 65.6879L364.315 112.649H363.938L347.698 65.6879C347.321 64.5198 346.525 63.7696 345.396 63.7696H315.051C314.967 63.7696 314.883 63.8103 314.799 63.8103C314.715 63.8103 314.591 63.7696 314.464 63.7696L237.95 63.6453C236.778 63.6453 236.025 64.3955 236.025 65.5636V73.9056L218.363 63.1866C217.399 62.6036 216.479 62.8115 215.726 63.4781L133.94 129.582V108.062C133.94 98.0528 137.414 92.255 144.949 91.7127C149.387 91.1297 154.031 92.5058 158.677 95.3822C159.85 95.9652 160.603 96.1752 161.398 95.215L172.408 68.0649C172.784 66.7296 172.616 66.1466 171.444 65.5636C168.555 63.2702 163.7 61.8941 158.51 61.8941C147.5 61.8941 138.627 66.1487 134.149 74.405H133.94V66.1466C133.94 64.9784 133.144 64.2283 132.015 64.2283H103.427C102.255 64.2283 101.502 64.9784 101.502 66.1466V137.757L73.2071 85.707L106.525 47.1713C107.446 46.254 106.985 44.835 105.604 44.835H69.9439C68.0596 44.835 66.9303 45.5445 65.5063 47.1713L38.9278 81.7868V2.33627C38.9278 0.96023 38.0071 0 36.5831 0H2.34466C0.963676 0 0 0.917363 0 2.33627V155.647C0 157.023 0.920654 157.984 2.34466 157.984H36.624C38.005 157.984 38.9686 157.066 38.9686 155.647V123.117L47.3406 111.983L69.4815 155.649C70.1935 157.276 71.3658 157.986 72.9963 157.986H132.013C133.185 157.986 133.938 157.193 133.938 156.067V141.177L150.052 150.979C151.015 151.562 151.936 151.354 152.73 150.688L166.081 138.843L196.803 157.527L192.365 174.794C192.157 175.795 192.365 176.672 193.329 177.295L216.266 191.225C217.102 191.725 217.855 191.433 218.066 190.432L239.914 89.3357L278.171 89.46V90.043L236.649 132.96C236.273 133.543 236.064 134.128 236.064 134.878V155.69C236.064 156.858 236.817 157.609 237.989 157.609H314.502C315.675 157.609 316.428 156.815 316.428 155.69V133.961C316.428 132.793 315.675 132.042 314.502 132.042H274.529V131.459L315.883 89.5029C316.26 88.9199 316.469 88.5427 316.469 87.5846V72.4867L349.115 151.894L345.641 160.862L336.349 185.052L331.41 197.814C331.074 198.648 331.702 199.481 332.582 199.481H358.576C359.496 199.481 360.333 198.939 360.669 198.063L412.862 65.8122C413.238 64.852 412.862 63.8939 411.522 63.8939L411.438 63.7696H411.442ZM203.043 133.459L184.669 122.324L211.832 98.5094L212.252 98.7601L203.043 133.459Z" fill="#B7FF5B"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M374.009 191.466C374.226 191.466 374.463 191.528 374.719 191.654C374.976 191.774 375.193 191.963 375.372 192.219C375.556 192.47 375.648 192.789 375.648 193.175C375.648 193.566 375.553 193.9 375.365 194.175C375.198 194.414 374.999 194.602 374.768 194.739L375.866 196.812H374.574L373.636 195.001H372.471V196.812H371.296V191.466H374.009ZM372.471 194.131H373.559C373.719 194.131 373.89 194.052 374.074 193.892C374.263 193.733 374.357 193.494 374.357 193.175C374.357 192.847 374.263 192.625 374.074 192.509C373.89 192.393 373.728 192.335 373.588 192.335H372.471V194.131Z" fill="#B7FF5B"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M373.327 188.408C374.13 188.408 374.882 188.558 375.583 188.857C376.284 189.157 376.9 189.572 377.432 190.104C377.964 190.635 378.38 191.251 378.68 191.951C378.979 192.651 379.129 193.402 379.129 194.204C379.129 195.006 378.979 195.757 378.68 196.457C378.38 197.157 377.964 197.773 377.432 198.304C376.9 198.836 376.284 199.251 375.583 199.551C374.882 199.85 374.13 200 373.327 200C372.525 200 371.773 199.85 371.072 199.551C370.371 199.251 369.754 198.836 369.222 198.304C368.69 197.773 368.275 197.157 367.975 196.457C367.675 195.757 367.525 195.006 367.525 194.204C367.525 193.402 367.675 192.651 367.975 191.951C368.275 191.251 368.69 190.635 369.222 190.104C369.754 189.572 370.371 189.157 371.072 188.857C371.773 188.558 372.525 188.408 373.327 188.408ZM373.327 189.799C372.515 189.799 371.775 189.997 371.108 190.393C370.441 190.789 369.909 191.32 369.512 191.987C369.116 192.653 368.918 193.393 368.918 194.204C368.918 195.015 369.116 195.754 369.512 196.421C369.909 197.087 370.441 197.619 371.108 198.015C371.775 198.411 372.515 198.609 373.327 198.609C374.139 198.609 374.879 198.411 375.547 198.015C376.214 197.619 376.746 197.087 377.142 196.421C377.539 195.754 377.737 195.015 377.737 194.204C377.737 193.393 377.539 192.653 377.142 191.987C376.746 191.32 376.214 190.789 375.547 190.393C374.879 189.997 374.139 189.799 373.327 189.799Z" fill="#B7FF5B"/>
+  </svg>
+
+  <div class="eyebrow" style="margin-top:34px">Category Opportunity Brief</div>
+  <h1>The nail-glue<br>opening.</h1>
+  <p class="lead">A category Krazy Glue is built to win, hiding in plain sight. The conversation is enormous, the leaders are weak on the one thing we own, and we are barely in the room.</p>
+  <div class="chips">
+    <span class="chip">241 TikTok videos</span>
+    <span class="chip">504,537 Amazon reviews</span>
+    <span class="chip">260 Reddit threads</span>
+    <span class="chip ghost">First-party Meta</span>
+    <span class="chip ghost">Pulled June 15, 2026</span>
+  </div>
+</header>
+</div>
+
+<!-- VERDICT -->
+<div class="wrap"><section style="border-top:none;padding-top:30px">
+  <div class="verdict">
+    <div class="tag">The verdict</div>
+    <h2 style="margin-top:12px">Enter — with a wedge, not a shortcut.</h2>
+    <p>The category is large, fast-moving, and visibly underserved on the one attribute Krazy Glue is built to own: <strong>hold.</strong> Two in five durability comments across half a million reviews are complaints. But it carries a real allergy-and-damage liability and entrenched 4.5-star incumbents at $2.49. So: build a purpose-made <strong>"safe-strong"</strong> nail product that wins on durability. The data supports a wedge. It does not support "put our super glue on your nails."</p>
+  </div>
+</section></div>
+
+<!-- SIZE OF PRIZE -->
+<div class="wrap"><section>
+  <div class="eyebrow">01 — Size of prize</div>
+  <h2>A standing category, not a trend.</h2>
+  <p>The external research cited one 331K-view video. The live pull shows that was a floor: a single "super glue on nails" video now sits at 11.2M views, and one sample sweep clears 74M.</p>
+  <div class="stats">
+    <div class="stat"><div class="num">74.0M</div><div class="lab">TikTok views across the 241-video sample</div></div>
+    <div class="stat"><div class="num">504,537</div><div class="lab">Amazon reviews across the competitive set</div></div>
+    <div class="stat"><div class="num">240,650+</div><div class="lab">Units / month moving in this sample alone</div></div>
+    <div class="stat"><div class="num">16</div><div class="lab">Videos over 1M views (top: 11.2M)</div></div>
+  </div>
+</section></div>
+
+<!-- SHARE OF VOICE -->
+<div class="wrap"><section>
+  <div class="eyebrow">02 — Share of voice</div>
+  <h2>The room is wide open.</h2>
+  <p>Krazy Glue has the exact equity this category trades on — super-glue authority, invisible strength — and is almost absent from the discussion. Brand mentions across the 241-video TikTok sample:</p>
+  <div style="margin-top:26px">
+    <div class="barrow"><div class="name">Gorilla</div><div class="track"><div class="fill mut" style="width:100%">16 videos</div></div></div>
+    <div class="barrow"><div class="name">KISS</div><div class="track"><div class="fill mut" style="width:81%">13 videos</div></div></div>
+    <div class="barrow"><div class="name lime" style="color:var(--lime)">Krazy Glue</div><div class="track"><div class="fill lime" style="width:38%">6 videos</div></div></div>
+  </div>
+  <p style="margin-top:18px">On Reddit it's starker: KISS is named 11 times in a nail context; Krazy Glue, effectively never. The improviser conversation is owned by competitors — a trusted super-glue name would enter a room with no super-glue incumbent in it.</p>
+</section></div>
+
+<!-- THE WEDGE -->
+<div class="wrap"><section>
+  <div class="eyebrow">03 — The wedge</div>
+  <h2>Durability is the category's weakness <span class="lime">and our strength.</span></h2>
+  <p>AI-aggregated sentiment across 504,537 reviews. The category likes strong glue — it just can't get glue that lasts. Every attribute Krazy Glue owns skews positive; the two it could fix skew negative.</p>
+  <div style="margin-top:26px">
+    <div class="barrow"><div class="name">Durability</div><div class="split"><span class="pos" style="width:60%">60% positive</span><span class="neg" style="width:40%"><span>40% neg</span></span></div></div>
+    <div class="barrow"><div class="name">Drying time</div><div class="split"><span class="pos" style="width:64%">64% positive</span><span class="neg" style="width:36%"><span>36% neg</span></span></div></div>
+    <div class="barrow"><div class="name">Strength</div><div class="split"><span class="pos" style="width:68%">68% positive</span><span class="neg" style="width:32%"><span>32%</span></span></div></div>
+    <div class="barrow"><div class="name">Adhesion</div><div class="split"><span class="pos" style="width:65%">65% positive</span><span class="neg" style="width:35%"><span>35%</span></span></div></div>
+    <div class="barrow"><div class="name">Ease of use</div><div class="split"><span class="pos" style="width:90%">90% positive</span><span class="neg" style="width:10%"><span></span></span></div></div>
+  </div>
+  <div class="legend"><span><span class="dot" style="background:var(--lime)"></span>Positive mentions</span><span><span class="dot" style="background:var(--red)"></span>Negative mentions</span></div>
+  <p style="margin-top:20px">Durability is the largest high-volume <strong>negative</strong> theme in the category: 15,248 mentions, 40% of them complaints. The hold benchmark is explicit in customers' own words.</p>
+  <div class="quote">"…lasted around 2 weeks, then started lifting."<span>r/PressonNail_Addict</span></div>
+  <div class="quote">"Candy Claws glue held nails on for 4+ weeks."<span>r/Nails — the hero benchmark</span></div>
+</section></div>
+
+<!-- PRODUCT DIRECTION + FIRST PARTY -->
+<div class="wrap"><section>
+  <div class="eyebrow">04 — What to build & who buys it</div>
+  <h2>The product the data is asking for.</h2>
+  <div class="cols">
+    <div class="panel">
+      <h3>Product direction</h3>
+      <ul>
+        <li><strong>Hold to 3+ weeks.</strong> 2 weeks is table stakes; 3–4 weeks earns love.</li>
+        <li><strong>Fix the applicator.</strong> "Brush dried before I could coat one nail" / "came out in a long string" — applicator is an open wound.</li>
+        <li><strong>Lean solid / gel.</strong> The breakout format ("no damage, no pain") solves the runny-nozzle complaint.</li>
+        <li><strong>Pair strength with safe removal</strong> — a too-rigid bond becomes a damage complaint.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>First-party fit (our Meta)</h3>
+      <ul>
+        <li><strong>Our own audience already improvises it,</strong> unprompted — including a press-on failure quote.</li>
+        <li><strong>Women 18–44 are 26% of followers</strong> — this is a paid-acquisition play, not a community one.</li>
+        <li><strong>$7.36 CPM, $0.88 CPC</strong> across $267K of spend — reaching the buyer is cheap and proven.</li>
+        <li><strong>One number left:</strong> the addressable nail-interest audience size — a 2-minute Ads Manager build.</li>
+      </ul>
+    </div>
+  </div>
+</section></div>
+
+<!-- RISKS -->
+<div class="wrap"><section>
+  <div class="eyebrow">05 — The case against</div>
+  <h2>Four risks, named honestly.</h2>
+  <div class="risks">
+    <div class="risk"><div class="n">Risk 01 — the big one</div><h3>Allergy & safety liability</h3><p>The loudest signal in the pull is health, not performance: 84 allergy/reaction mentions on Reddit (a dedicated r/Allergies thread) vs 31 for damage. Cyanoacrylate/HEMA sensitization is real and rising. A trusted name on a skin-contact product inherits that liability — and the regulatory bar that comes with it.</p></div>
+    <div class="risk"><div class="n">Risk 02</div><h3>Entrenched, cheap incumbents</h3><p>NYK1 (91,870 reviews), Nailene (60K), KISS at $2.49 / 50K units a month, Makartt at 4.7 stars. Median price $8.35, floor $2.49. A premium "safe-strong" entry has to out-justify a 4.7-star, $9.99 incumbent.</p></div>
+    <div class="risk"><div class="n">Risk 03</div><h3>Brand-fit & the off-label line</h3><p>Our own guardrail is on-label uses only. We legally cannot tell people to put the existing tube on their nails. Capturing this demand requires a separate, cosmetically-compliant SKU — raising the bar from campaign to product development.</p></div>
+    <div class="risk"><div class="n">Risk 04</div><h3>Damage stigma & removal</h3><p>Damage (31) and removal/acetone (97) are persistent. One informed user: "the damage is from the nail flexing under the glue, not the glue itself." Win hold and gentle removal together, or the strength advantage becomes a complaint.</p></div>
+  </div>
+  <p style="margin-top:20px;color:var(--sec-light)"><strong class="white">Honest note on white space:</strong> "conditions while it bonds" is mostly open, but not virgin — strengthener hybrids exist (Valitic, Sally Hansen). Frame the first-mover story as "first to do it credibly," not "first to think of it."</p>
+</section></div>
+
+<!-- COMPETITIVE SET -->
+<div class="wrap"><section>
+  <div class="eyebrow">06 — The competitive set</div>
+  <h2>Who owns the shelf.</h2>
+  <p>Top of the category by review volume, from the live Amazon pull. The leaders win on velocity and value — not on durability. No one owns "lasts the longest, safely."</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Brand</th><th>Price</th><th>Stars</th><th>Reviews</th><th>Monthly</th><th>Format / note</th></tr></thead>
+      <tbody class="mono">
+        <tr><td class="brand">NYK1</td><td>$12.99</td><td>4.3</td><td>91,870</td><td>60K+</td><td>Brush-on, "super strong" — volume leader</td></tr>
+        <tr><td class="brand">Nailene</td><td>$9.95</td><td>4.4</td><td>60,195</td><td>500+</td><td>Quick brush, drugstore staple</td></tr>
+        <tr><td class="brand">KDS</td><td>$4.27</td><td>4.5</td><td>41,052</td><td>10K+</td><td>Tip glue, value</td></tr>
+        <tr><td class="brand">KISS PowerFlex</td><td>$2.49</td><td>4.5</td><td>28,904</td><td>50K+</td><td>Price + velocity leader</td></tr>
+        <tr><td class="brand">Makartt</td><td>$9.99</td><td>4.7</td><td>22,869</td><td>20K+</td><td>Highest-rated major</td></tr>
+        <tr><td class="brand">UNA GELLA</td><td>$13.99</td><td>4.5</td><td>21,921</td><td>9K+</td><td>Solid gel — premium emerging format</td></tr>
+        <tr><td class="brand">beetles</td><td>$9.49</td><td>4.5</td><td>19,129</td><td>1K+</td><td>Gel nail-glue kit</td></tr>
+        <tr><td class="brand">Glamnetic</td><td>$15.99</td><td>4.0</td><td>13,168</td><td>8K+</td><td>Premium price, soft rating — vulnerable</td></tr>
+        <tr><td class="brand">Valitic</td><td>$14.99</td><td>4.3</td><td>5,852</td><td>2K+</td><td>Glue + strengthener — closest to "treatment"</td></tr>
+        <tr class="kg"><td class="brand">Krazy Glue</td><td>premium</td><td>—</td><td>—</td><td>—</td><td>The open position: longest-lasting, nail-safe</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section></div>
+
+<!-- RECOMMENDATION -->
+<div class="wrap"><section>
+  <div class="eyebrow">07 — The recommendation</div>
+  <h2>Go, with a defined wedge.</h2>
+  <div class="steps">
+    <div class="step"><div><h3>Position on durability + safety</h3><p>"Super-glue hold, nail-safe." Own the #1 unmet need with our #1 asset, and neutralize the #1 risk in the same claim.</p></div></div>
+    <div class="step"><div><h3>Build a purpose-made cosmetic SKU</h3><p>Not the industrial tube. Clears the off-label risk and earns a premium price against $2.49 incumbents.</p></div></div>
+    <div class="step"><div><h3>Engineer the applicator</h3><p>Solve runny / dried-brush / messy — the loudest complaint after hold. Test solid/gel or a precision applicator.</p></div></div>
+    <div class="step"><div><h3>Target a 3-week hold with safe removal</h3><p>2 weeks is table stakes, 3–4 is the hero claim, and removal has to stay gentle.</p></div></div>
+    <div class="step"><div><h3>Acquire via paid</h3><p>The buyer is 26% of the organic audience, but our paid engine reaches her at $7.36 CPM. Media-led, not community-led.</p></div></div>
+  </div>
+</section></div>
+
+<div class="wrap"><footer>
+  <p><strong style="color:var(--cream)">Methodology.</strong> TikTok: 241 unique videos (Apify clockworks/tiktok-scraper, 13 queries). Amazon: 63 nail-glue products / 504,537 reviews (junglee/Amazon-crawler, 8 search terms) with AI-aggregated review-theme sentiment. Reddit: 260 posts & comments (trudax/reddit-scraper-lite) across r/Nails, r/PressonNail_Addict, r/Allergies and others. First-party: Krazy Glue IG organic, comments, follower demographics via Graph API; paid benchmarks from Ads Manager. Pulled June 15, 2026. Volumes are directional minimums from a broad but finite sample, not category totals.</p>
+</footer></div>
+
+</body>
+</html>
