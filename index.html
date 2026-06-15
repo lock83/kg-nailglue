@@ -108,6 +108,18 @@ tr.kg td.brand{color:var(--lime)}
 footer{padding:50px 0 70px;border-top:1px solid rgba(197,223,201,.16)}
 footer p{font-size:13.5px;color:var(--sec-light);max-width:90ch}
 .mono{font-variant-numeric:tabular-nums}
+/* PASSWORD GATE */
+#gate{position:fixed;inset:0;z-index:9999;background:var(--green);display:flex;align-items:center;justify-content:center;padding:24px}
+#gate.hidden{display:none}
+.gatecard{max-width:380px;width:100%;text-align:center}
+.gatecard .gl{color:var(--lime);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
+.gatecard h2{color:var(--cream);font-size:26px;margin:14px 0 6px}
+.gatecard p{color:var(--sec-dark);font-size:15px;margin:0 auto 22px;max-width:30ch}
+#gpw{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(197,223,201,.35);background:rgba(197,223,201,.07);color:var(--cream);font-family:inherit;font-size:16px;outline:none}
+#gpw:focus{border-color:var(--lime)}
+#gbtn{margin-top:12px;width:100%;padding:14px;border:none;border-radius:12px;background:var(--lime);color:var(--green);font-family:inherit;font-weight:700;font-size:16px;cursor:pointer}
+#gerr{color:var(--red);font-size:14px;margin-top:12px;min-height:18px}
+body.locked{overflow:hidden}
 @media(max-width:780px){
   .stats{grid-template-columns:repeat(2,1fr)}
   .cols,.risks{grid-template-columns:1fr}
@@ -116,6 +128,17 @@ footer p{font-size:13.5px;color:var(--sec-light);max-width:90ch}
 </style>
 </head>
 <body class="grid-bg">
+
+<div id="gate">
+  <div class="gatecard">
+    <div class="gl">Krazy Glue</div>
+    <h2>Protected brief</h2>
+    <p>Enter the password to view the nail-glue opportunity brief.</p>
+    <input id="gpw" type="password" placeholder="Password" autocomplete="off" autofocus>
+    <button id="gbtn">Unlock</button>
+    <div id="gerr"></div>
+  </div>
+</div>
 
 <div class="wrap">
 <header class="hero">
@@ -274,6 +297,20 @@ footer p{font-size:13.5px;color:var(--sec-light);max-width:90ch}
 <div class="wrap"><footer>
   <p><strong style="color:var(--cream)">Methodology.</strong> TikTok: 241 unique videos (Apify clockworks/tiktok-scraper, 13 queries). Amazon: 63 nail-glue products / 504,537 reviews (junglee/Amazon-crawler, 8 search terms) with AI-aggregated review-theme sentiment. Reddit: 260 posts & comments (trudax/reddit-scraper-lite) across r/Nails, r/PressonNail_Addict, r/Allergies and others. First-party: Krazy Glue IG organic, comments, follower demographics via Graph API; paid benchmarks from Ads Manager. Pulled June 15, 2026. Volumes are directional minimums from a broad but finite sample, not category totals.</p>
 </footer></div>
+
+<script>
+(function(){
+  var KEY="krazyglue";
+  var gate=document.getElementById("gate"),pw=document.getElementById("gpw"),btn=document.getElementById("gbtn"),err=document.getElementById("gerr");
+  document.body.classList.add("locked");
+  function norm(v){return (v||"").toLowerCase().replace(/\s+/g,"");}
+  function unlock(){try{sessionStorage.setItem("kgnail_ok","1");}catch(e){}gate.classList.add("hidden");document.body.classList.remove("locked");}
+  function tryit(){if(norm(pw.value)===KEY){unlock();}else{err.textContent="Incorrect password.";pw.value="";pw.focus();}}
+  try{if(sessionStorage.getItem("kgnail_ok")==="1"){unlock();}}catch(e){}
+  btn.addEventListener("click",tryit);
+  pw.addEventListener("keydown",function(e){if(e.key==="Enter")tryit();});
+})();
+</script>
 
 </body>
 </html>
